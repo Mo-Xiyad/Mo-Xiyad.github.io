@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    Window tab icon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo/10.png'%}"/>
+    <title>Welcome - {% block title %}{% endblock title %}</title>
+
+    {% block css %}{% endblock css %}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<body>
+
+<!-- Navbar Starts here-->
+<div class="navtop-border background-nav"></div>
+<nav class="navbar navbar-expand-lg">
+    <!-- Brand -->
+        <a class="navbar-brand">
+            <img src="{% static 'logo/10.png' %}" class="navbar-brand-img ms-4 mb-2" alt="..." width="40">
+        </a>
+    <div class="container">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active p-2">
+                    <a class="nav-link" href="{% url 'landing_page' %}">Home</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="{% url 'blog_home' %}">Blog</a>
+                </li>
+
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="{% url 'resource_page' %}">Resources</a>
+                </li>
+
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                </li>
+
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="{% url 'landing_page' %}">Tutorials</a>
+                </li>
+
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="{% url 'landing_page' %}">Features</a>
+                </li>
+            </ul>
+
+            <!-- Button -->
+            <a class="navbar-btn btn btn-sm btnns lift ms-auto" href="#" target="">
+                Contact
+            </a>
+            <a class="navbar-btn btn btn-sm btnns ms-3 lift" href="{% url 'login_page' %}" target="">
+                Login
+            </a>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR  -->
+
+<!-- BODY STARTS-->
+<!--<div class="container mt-5">-->
+<!--    <div class="section mt-5">-->
+        {% block body %}
+        {% endblock body %}
+
+<!--  END BODY  -->
+
+<!-- Footer -->
+<div class="container">
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <img class="mb-2" src="{% static 'logo/10.png' %}" alt="" width="24" height="24">
+                <small class="d-block mb-3 text-muted">© 2021</small>
+            </div>
+            <div class="col-6 col-md">
+                <h6 class="text-uppercase fw-bold ">Features</h6>
+                <ul class="list-unstyled text-small">
+                    <li><small><a class="text-muted" href="{% url 'landing_page' %}">Cool stuff</a></small></li>
+                    <li><small><a class="text-muted" href="{% url 'landing_page' %}">Random feature</a></small></li>
+                    <li><small><a class="text-muted" href="{% url 'landing_page' %}">Stuff for developers</a></small></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h6 class="text-uppercase fw-bold">Resources</h6>
+                <ul class="list-unstyled text-small">
+                    <li><small><a class="text-muted" href="{% url 'resource_page' %}">Programming</a></small></li>
+                    <li><small><a class="text-muted" href="{% url 'resource_page' %}">Python</a></small></li>
+                    <li><small><a class="text-muted" href="{% url 'resource_page' %}">JavaScript</a></small></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h6 class="text-uppercase fw-bold ">Tutorials</h6>
+                <ul class="list-unstyled text-small">
+                    <li><small><a class="text-muted" href="{% url 'landing_page' %}">Python</a></small></li>
+                    <li><small><a class="text-muted" href="{% url 'landing_page' %}">Django</a></small></li>
+                    <li><small><a class="text-muted" href="{% url 'landing_page' %}">Problem Solving</a></small></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                <ul class="list-unstyled text-small">
+                    <li><small class="text-muted me-3">
+                        <lord-icon
+                                src="https://cdn.lordicon.com/gmzxduhd.json"
+                                trigger="loop"
+                                delay="1000"
+                                colors="primary:#121331,secondary:#277da1"
+                                style="width:30px;height:30px">
+                        </lord-icon>
+                        Stockholm, Sweden</small></li>
+                    <li><small class="text-muted me-3">
+                        <lord-icon
+                                src="https://cdn.lordicon.com/tkgyrmwc.json"
+                                trigger="loop"
+                                delay="1000"
+                                colors="primary:#121331,secondary:#277da1"
+                                style="width:30px;height:30px">
+                        </lord-icon>
+                        info@example.com
+                    </small></li>
+                </ul>
+            </div>
+        </div>
+        <p class="text-center"><small class="text-muted"> No responsibility for the content of linked third-party
+            websites. I have not received any compensation for linking any of these resources, they are all recommended
+            based on my own personal experience ✌️</small></p>
+    </footer>
+</div>
+<!-- END FOOTER -->
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+{% block js %}{% endblock js %}
+
+</body>
+</html>

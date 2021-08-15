@@ -1,0 +1,14 @@
+.div_with_background {
+    background: url("/static/img/background2.svg");
+    /*background-size: cover;*/
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 30%;
+    /*position: center;*/
+    /*background: #fafaff;*/
+}
+
+div .dropdown-menu{
+        color: #f7f7ff;
+    background: #011627;
+}
